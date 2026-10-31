@@ -11,12 +11,12 @@
 
 services:
   petkit-bridge:
-    image: ghcr.io/raulhartzen/petkit-bridge:latest
+    image: raulhartzen/petkit-bridge:latest
     # To build from source instead of pulling the image, replace the line
     # above with:
     # build: .
     container_name: petkit-bridge
-    restart: unless-stopped
+    restart: always
     network_mode: host
     env_file: .env
     healthcheck:
@@ -34,8 +34,8 @@ services:
   # go2rtc turns the bridge's WHEP streams into RTSP for ffmpeg/HomeKit.
   # No configuration file is needed: the Homebridge plugin registers the
   # camera streams on go2rtc's API at startup.
-  go2rtc:
-    image: alexxit/go2rtc:latest
-    container_name: petkit-go2rtc
-    restart: unless-stopped
-    network_mode: host
+  # go2rtc:
+  #   image: alexxit/go2rtc:latest
+  #   container_name: petkit-go2rtc
+  #   restart: unless-stopped
+  #   network_mode: host
