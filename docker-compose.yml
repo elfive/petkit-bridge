@@ -11,7 +11,7 @@
 
 services:
   petkit-bridge:
-    image: raulhartzen/petkit-bridge:latest
+    image: ghcr.io/raulhartzen/petkit-bridge:latest
     # To build from source instead of pulling the image, replace the line
     # above with:
     # build: .
